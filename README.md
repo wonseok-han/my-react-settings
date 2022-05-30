@@ -180,7 +180,7 @@
 # 3. eslint rules
 
 ```js
-.eslintrc.js
+// .eslintrc.js
   rules: {
     'react/react-in-jsx-scope': 'off', // Prevent missing React when using JSX
     'react/prop-types': 'off', // Prevent missing props validation in a React component definition
