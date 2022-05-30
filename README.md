@@ -61,6 +61,7 @@
 # 2. tsconfig
 
 ```js
+// tsconfig.json
 {
   "compilerOptions": {
     // Base Options
@@ -179,6 +180,7 @@
 # 3. eslint rules
 
 ```js
+.eslintrc.js
   rules: {
     'react/react-in-jsx-scope': 'off', // Prevent missing React when using JSX
     'react/prop-types': 'off', // Prevent missing props validation in a React component definition
