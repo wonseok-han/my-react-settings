@@ -60,7 +60,7 @@
 
 # 2. tsconfig
 
-```json
+```js
 {
   "compilerOptions": {
     // Base Options
