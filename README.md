@@ -54,7 +54,7 @@
   /**
    * Control whether Prettier formats quoted code embedded in the file.
    */
-  embeddedLanguageFormatting: 'off',
+  embeddedLanguageFormatting: 'auto',
 }
 ```
 
