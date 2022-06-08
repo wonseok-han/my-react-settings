@@ -179,8 +179,8 @@
 
 # 3. eslint rules
 
-```js
-// .eslintrc.js
+```json
+// .eslintrc
   "rules": {
     "react/react-in-jsx-scope": "off", // Prevent missing React when using JSX
     "react/prop-types": "off", // Prevent missing props validation in a React component definition
@@ -217,55 +217,36 @@
 
 # 4. Typescript eslint rules
 ```json
-// https://github.com/jsx-eslint/eslint-plugin-react
-// https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin
-
-{
-  "env": {
-    "browser": true,
-    "es2021": true,
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": "./tsconfig.json",
-  },
-  "plugins": ["react", "@typescript-eslint"],
+  // .eslintrc
   "rules": {
     // "@typescript-eslint/no-explicit-any": "off",    // Disallow the any type
     // "@typescript-eslint/no-unused-vars": ["warn"], // Disallow unused variables
     "@typescript-eslint/array-type": ["error", { "default": "generic" }],   // Require using either T[] or Array<T> for arrays
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],   // Enforce type definitions to consistently use either interface or type
-    "@typescript-eslint/explicit-function-return-type": "off",  // Require explicit return types on functions and class methods
-    "@typescript-eslint/explicit-module-boundary-types": "off", // Require explicit return and argument types on exported functions' and classes' public class methods
     "@typescript-eslint/method-signature-style": ["error", "property"], // Enforce using a particular method signature syntax
     "@typescript-eslint/naming-convention": [   // Enforce naming conventions for everything across a codebase
         "error",
         {
-          "selector": ["variable", "function"],
+          "selector": ["variable"],
           "types": ["boolean"],
+          "format": ["camelCase"],
           "prefix": ["is", "should", "has", "can", "did", "will"]
         },
         {
-            "selector": ["default", "variable", "function",  "parameter"],
-            "format": ["camelCase"]
+          "selector": ["default", "parameter"],
+          "format": ["camelCase"]
         },
         {
-            "selector": ["typeLike", "interface"],
-            "format": ["PascalCase"],
-            "custom": {
-                "regex": "^I[A-Z]",
-                "match": false
-            }
+          "selector": ["function", "variable"],
+          "format": ["camelCase", "PascalCase"]
+        },
+        {
+          "selector": ["typeLike"],
+          "format": ["PascalCase"],
+          "custom": {
+              "regex": "^I[A-Z]",
+              "match": false
+          }
         }
       ],
       "@typescript-eslint/no-extraneous-class": ["error"],  // Disallow classes used as namespaces
@@ -275,29 +256,24 @@
       "@typescript-eslint/prefer-optional-chain": "error",   // Enforce using concise optional chain expressions instead of chained logical ands
       "@typescript-eslint/sort-type-union-intersection-members": ["error"], // Enforce members of a type union/intersection to be sorted alphabetically
       "@typescript-eslint/type-annotation-spacing": ["error", { // Require consistent spacing around type annotations
-          "before": true,
-          "after": true
+          "before": false,
+          "after": true,
+          "overrides": {
+            "arrow": {
+              "before": true,
+              "after": true
+            }
+          }
       }],
-      "@typescript-eslint/indent": ["error"],   // Enforce consistent indentation
+      "@typescript-eslint/indent": ["error", 2],   // Enforce consistent indentation
       "@typescript-eslint/comma-dangle": ["error"], // Require or disallow trailing commas
-      "@typescript-eslint/no-extra-parens": ["error"],  // Disallow unnecessary parentheses
+      "@typescript-eslint/no-extra-parens": ["error", "all"],  // Disallow unnecessary parentheses
       "@typescript-eslint/no-redeclare": ["error"], // Disallow variable redeclaration
       "@typescript-eslint/no-use-before-define": ["error"], // Disallow the use of variables before they are defined
-      "@typescript-eslint/object-curly-spacing": ["error"], // Enforce consistent spacing inside braces
-      "@typescript-eslint/quotes": ["error"],   // Enforce the consistent use of either backticks, double, or single quotes
+      "@typescript-eslint/object-curly-spacing": ["error", "always"], // Enforce consistent spacing inside braces
+      "@typescript-eslint/quotes": ["error", "single", { "allowTemplateLiterals": true }],   // Enforce the consistent use of either backticks, double, or single quotes
       "@typescript-eslint/space-before-blocks": ["error"],  // Enforce consistent spacing before blocks
-      "@typescript-eslint/space-before-function-paren": ["error"],  // Enforce consistent spacing before function parenthesis
-      "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],  // Require spacing around infix operators
-  },
-  "overrides": [
-    {
-      // enable the rule specifically for TypeScript files
-      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": ["error"],
-        "@typescript-eslint/explicit-module-boundary-types": ["error"]
-      }
-    }
-  ]
-}
+      "@typescript-eslint/space-before-function-paren": ["error", "never"],  // Enforce consistent spacing before function parenthesis
+      "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }]  // Require spacing around infix operators
+  }
 ```
