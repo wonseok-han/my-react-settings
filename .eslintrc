@@ -74,7 +74,6 @@
       }],
       "@typescript-eslint/indent": ["error", 2],   // Enforce consistent indentation
       "@typescript-eslint/comma-dangle": ["error", "only-multiline"], // Require or disallow trailing commas
-      "@typescript-eslint/no-extra-parens": ["error", "all"],  // Disallow unnecessary parentheses
       "@typescript-eslint/no-redeclare": ["error"], // Disallow variable redeclaration
       "@typescript-eslint/no-use-before-define": ["error"], // Disallow the use of variables before they are defined
       "@typescript-eslint/object-curly-spacing": ["error", "always"], // Enforce consistent spacing inside braces
