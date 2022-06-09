@@ -36,12 +36,12 @@
         {
           "selector": ["variable"],
           "types": ["boolean"],
-          "format": ["camelCase"],
+          "format": ["PascalCase"],
           "prefix": ["is", "should", "has", "can", "did", "will"]
         },
         {
           "selector": ["default", "parameter"],
-          "format": ["camelCase"]
+          "format": ["camelCase", "snake_case"]
         },
         {
           "selector": ["function", "variable"],
@@ -73,14 +73,17 @@
           }
       }],
       "@typescript-eslint/indent": ["error", 2],   // Enforce consistent indentation
-      "@typescript-eslint/comma-dangle": ["error"], // Require or disallow trailing commas
-      "@typescript-eslint/no-extra-parens": ["error", "all"],  // Disallow unnecessary parentheses
+      "@typescript-eslint/comma-dangle": ["error", "only-multiline"], // Require or disallow trailing commas
       "@typescript-eslint/no-redeclare": ["error"], // Disallow variable redeclaration
       "@typescript-eslint/no-use-before-define": ["error"], // Disallow the use of variables before they are defined
       "@typescript-eslint/object-curly-spacing": ["error", "always"], // Enforce consistent spacing inside braces
       "@typescript-eslint/quotes": ["error", "single", { "allowTemplateLiterals": true }],   // Enforce the consistent use of either backticks, double, or single quotes
       "@typescript-eslint/space-before-blocks": ["error"],  // Enforce consistent spacing before blocks
-      "@typescript-eslint/space-before-function-paren": ["error", "never"],  // Enforce consistent spacing before function parenthesis
+      "@typescript-eslint/space-before-function-paren": ["error", {
+          "anonymous": "never",
+          "asyncArrow": "always",
+          "named": "never"
+      }],  // Enforce consistent spacing before function parenthesis
       "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }]  // Require spacing around infix operators
   },
   "overrides": [
