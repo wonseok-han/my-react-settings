@@ -1,7 +1,6 @@
 # 1. prettier
-
+- [.prettierrc.js](https://github.com/wonseok-han/my-react-settings/blob/main/.prettierrc.js)
 ```js
-// .prettierrc.js
 {
   /**
    * Specify the line length that the printer will wrap on.
@@ -59,9 +58,8 @@
 ```
 
 # 2. tsconfig
-
-```js
-// tsconfig.json
+- [tsconfig.json](https://github.com/wonseok-han/my-react-settings/blob/main/tsconfig.json)
+```json
 {
   "compilerOptions": {
     // Base Options
@@ -177,9 +175,9 @@
 }
 ```
 
-# 3. eslint rules
-
-```json
+# 3. `JavaScript eslint` rules
+- [.eslintrc](https://github.com/wonseok-han/my-react-settings/blob/main/.eslintrc.javascript)
+```js
 // .eslintrc
   "rules": {
     "react/react-in-jsx-scope": "off", // Prevent missing React when using JSX
@@ -215,65 +213,182 @@
   }
 ```
 
-# 4. Typescript eslint rules
-```json
+# 4. `TypeScript eslint` rules
+- [.eslintrc](https://github.com/wonseok-han/my-react-settings/blob/main/.eslintrc)
+```js
   // .eslintrc
   "rules": {
     // "@typescript-eslint/no-explicit-any": "off",    // Disallow the any type
     // "@typescript-eslint/no-unused-vars": ["warn"], // Disallow unused variables
-    "@typescript-eslint/array-type": ["error", { "default": "generic" }],   // Require using either T[] or Array<T> for arrays
-    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],   // Enforce type definitions to consistently use either interface or type
-    "@typescript-eslint/method-signature-style": ["error", "property"], // Enforce using a particular method signature syntax
-    "@typescript-eslint/naming-convention": [   // Enforce naming conventions for everything across a codebase
-        "error",
-        {
-          "selector": ["variable"],
-          "types": ["boolean"],
-          "format": ["camelCase"],
-          "prefix": ["is", "should", "has", "can", "did", "will"]
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling"
+          ],
+          "index"
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
         },
-        {
-          "selector": ["default", "parameter"],
-          "format": ["camelCase"]
-        },
-        {
-          "selector": ["function", "variable"],
-          "format": ["camelCase", "PascalCase"]
-        },
-        {
-          "selector": ["typeLike"],
-          "format": ["PascalCase"],
-          "custom": {
-              "regex": "^I[A-Z]",
-              "match": false
+        "newlines-between": "always"
+      }
+    ],
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off", // Prevent missing React when using JSX
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ], // Restrict file extensions that may contain JSX
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "generic"
+      }
+    ], // Require using either T[] or Array<T> for arrays
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "interface"
+    ], // Enforce type definitions to consistently use either interface or type
+    "@typescript-eslint/method-signature-style": [
+      "error",
+      "property"
+    ], // Enforce using a particular method signature syntax
+    "@typescript-eslint/naming-convention": [ // Enforce naming conventions for everything across a codebase
+      "error",
+      {
+        "selector": [
+          "variable"
+        ],
+        "types": [
+          "boolean"
+        ],
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "is",
+          "should",
+          "has",
+          "can",
+          "did",
+          "will"
+        ]
+      },
+      {
+        "selector": [
+          "default",
+          "parameter"
+        ],
+        "format": [
+          "camelCase",
+          "snake_case"
+        ]
+      },
+      {
+        "selector": [
+          "function",
+          "variable"
+        ],
+        "format": [
+          "camelCase",
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": [
+          "typeLike"
+        ],
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-extraneous-class": [
+      "error"
+    ], // Disallow classes used as namespaces
+    "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error", // Disallow non-null assertions in the left operand of a nullish coalescing operator
+    "@typescript-eslint/no-useless-empty-export": "error", // Disallow empty exports that don"t change anything in a module file
+    "@typescript-eslint/prefer-for-of": "error", // Enforce the use of for-of loop over the standard for loop where possible
+    "@typescript-eslint/prefer-optional-chain": "error", // Enforce using concise optional chain expressions instead of chained logical ands
+    "@typescript-eslint/sort-type-union-intersection-members": [
+      "error"
+    ], // Enforce members of a type union/intersection to be sorted alphabetically
+    "@typescript-eslint/type-annotation-spacing": [
+      "error",
+      { // Require consistent spacing around type annotations
+        "before": false,
+        "after": true,
+        "overrides": {
+          "arrow": {
+            "before": true,
+            "after": true
           }
         }
-      ],
-      "@typescript-eslint/no-extraneous-class": ["error"],  // Disallow classes used as namespaces
-      "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",    // Disallow non-null assertions in the left operand of a nullish coalescing operator
-      "@typescript-eslint/no-useless-empty-export": "error",    // Disallow empty exports that don't change anything in a module file
-      "@typescript-eslint/prefer-for-of": "error",  // Enforce the use of for-of loop over the standard for loop where possible
-      "@typescript-eslint/prefer-optional-chain": "error",   // Enforce using concise optional chain expressions instead of chained logical ands
-      "@typescript-eslint/sort-type-union-intersection-members": ["error"], // Enforce members of a type union/intersection to be sorted alphabetically
-      "@typescript-eslint/type-annotation-spacing": ["error", { // Require consistent spacing around type annotations
-          "before": false,
-          "after": true,
-          "overrides": {
-            "arrow": {
-              "before": true,
-              "after": true
-            }
-          }
-      }],
-      "@typescript-eslint/indent": ["error", 2],   // Enforce consistent indentation
-      "@typescript-eslint/comma-dangle": ["error", "only-multiline"], // Require or disallow trailing commas
-      "@typescript-eslint/no-extra-parens": ["error", "all"],  // Disallow unnecessary parentheses
-      "@typescript-eslint/no-redeclare": ["error"], // Disallow variable redeclaration
-      "@typescript-eslint/no-use-before-define": ["error"], // Disallow the use of variables before they are defined
-      "@typescript-eslint/object-curly-spacing": ["error", "always"], // Enforce consistent spacing inside braces
-      "@typescript-eslint/quotes": ["error", "single", { "allowTemplateLiterals": true }],   // Enforce the consistent use of either backticks, double, or single quotes
-      "@typescript-eslint/space-before-blocks": ["error"],  // Enforce consistent spacing before blocks
-      "@typescript-eslint/space-before-function-paren": ["error", "never"],  // Enforce consistent spacing before function parenthesis
-      "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }]  // Require spacing around infix operators
+      }
+    ],
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ], // Enforce consistent indentation
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "only-multiline"
+    ], // Require or disallow trailing commas
+    "@typescript-eslint/no-redeclare": [
+      "error"
+    ], // Disallow variable redeclaration
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ], // Disallow the use of variables before they are defined
+    "@typescript-eslint/object-curly-spacing": [
+      "error",
+      "always"
+    ], // Enforce consistent spacing inside braces
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ], // Enforce the consistent use of either backticks, double, or single quotes
+    "@typescript-eslint/space-before-blocks": [
+      "error"
+    ], // Enforce consistent spacing before blocks
+    "@typescript-eslint/space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "asyncArrow": "always",
+        "named": "never"
+      }
+    ], // Enforce consistent spacing before function parenthesis
+    "@typescript-eslint/space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
+      }
+    ] // Require spacing around infix operators
   }
 ```
+
+# Reference
+- [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
+- [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+- [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
