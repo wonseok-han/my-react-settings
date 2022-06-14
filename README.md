@@ -59,7 +59,7 @@
 
 # 2. tsconfig
 - [tsconfig.json](https://github.com/wonseok-han/my-react-settings/blob/main/tsconfig.json)
-```json
+```js
 {
   "compilerOptions": {
     // Base Options
