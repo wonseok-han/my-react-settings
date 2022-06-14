@@ -387,6 +387,8 @@
 ```
 
 # Reference
+- [prettier](https://prettier.io/docs/en/options.html)
+- [tsconfig](https://www.typescriptlang.org/tsconfig)
 - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)
 - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
