@@ -3,12 +3,6 @@ This is `Eslint` and `Prettier`, `Tsconfig` settings in my TypeScript React.
 
 ---
 
-# P.S
-Turn off your [`ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) of VSCode extension.
-
-If you don't turn off the ESLint extension you will have `performance issues` with your `eslint-prettier` in VSCode `format on save` function.
-
----
 
 # 1. prettier
 - [.prettierrc.js](https://github.com/wonseok-han/my-react-settings/blob/main/.prettierrc.js)
