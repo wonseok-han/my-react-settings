@@ -28,7 +28,7 @@
   "lint-staged": {
     "./src/**/*.{js,jsx,ts,tsx}": [
       "eslint ./src --fix",
-      "prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""
+      "prettier -w ./src/**/*.(js|jsx|ts|tsx)"
     ]
   },
   "eslintConfig": {
