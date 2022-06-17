@@ -22,11 +22,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src --fix",
     "prettier": "npx prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["eslint ./src --fix", "prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""]
+    "*.{ts,tsx}": [
+      "eslint ./src --fix",
+      "prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""
+    ]
   },
   "husky": {
     "hooks": {
@@ -57,6 +60,7 @@
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "husky": "^8.0.1",

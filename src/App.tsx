@@ -3,7 +3,9 @@ interface Props {
 }
 
 function App() {
-  const Hello = ({ test }: Props) => <div>{test && 'aaa'}</div>;
+  const Hello = ({ test }: Props) => (
+    <div>{test && 'Welcome my react settings'}</div>
+  );
 
   return (
     <div className="App">
