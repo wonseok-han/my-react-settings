@@ -3,6 +3,21 @@ This is `Eslint` and `Prettier`, `Tsconfig`, `husky`, `vscode` settings in my Ty
 
 ---
 
+# Getting Started
+```bash
+# Packages Install
+yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-react husky lint-staged prettier
+npm set-script prepare "husky install"
+yarn prepare
+or
+npm install --save-dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-react husky lint-staged prettier
+npm set-script prepare "husky install"
+npm run prepare
+```
+
+Copy `.eslintrc`, `.eslintignore`, `prettierrc.js`, `.prettierignore`, `tsconfig.json`, `.vscode`
+
+---
 
 # 1. prettier
 - [.prettierrc.js](https://github.com/wonseok-han/my-react-settings/blob/main/.prettierrc.js)
@@ -18,6 +33,24 @@ This is `Eslint` and `Prettier`, `Tsconfig`, `husky`, `vscode` settings in my Ty
 
 # 5. husky
 - [husky](https://github.com/wonseok-han/my-react-settings/blob/main/.husky/pre-commit)
+```bash
+# husky pre-commint init setting
+npx husky add .husky/pre-commit "yarn lint-staged"
+```
+```js
+// package.json
+{
+  "scripts": {
+    "prepare": "husky install",
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx,ts,tsx}": [
+      "eslint ./src --fix",
+      "prettier -w ./src/**/*.(js|jsx|ts|tsx)"
+    ]
+  },
+}
+```
 
 # 6. VSCode Settings
 - [VSCode Settings](https://github.com/wonseok-han/my-react-settings/blob/main/.vscode/settings.json)
