@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "postinstall": "husky install",
+    "prepare": "husky install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -26,15 +26,10 @@
     "prettier": "npx prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "./src/**/*.{js,jsx,ts,tsx}": [
       "eslint ./src --fix",
       "prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "eslintConfig": {
     "extends": [
