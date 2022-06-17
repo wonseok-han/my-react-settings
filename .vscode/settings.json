@@ -3,7 +3,9 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    // ESLint
+    /**
+     * ESLint
+     */
     "eslint.validate": [
         {
             "language": "vue",
@@ -32,7 +34,9 @@
         }
     ],
     "eslint.alwaysShowStatus": true,
-    // prettier extension settings
+    /**
+     * prettier extension settings
+     */
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
@@ -53,7 +57,9 @@
         "editor.defaultFormatter": "vscode.html-language-features",
         "editor.formatOnSave": true
     },
-    // json settings
+    /**
+     * json settings
+     */
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features",
         "editor.formatOnSave": true
