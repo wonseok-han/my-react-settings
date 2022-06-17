@@ -5,6 +5,7 @@ interface Props {
 const test = '';
 
 function App() {
+  console.log();
   const Hello = ({ test }: Props) => (
     <div>{test && 'Welcome my react settings'}</div>
   );
