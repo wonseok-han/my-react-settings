@@ -5,17 +5,13 @@ This is `Eslint` and `Prettier`, `Tsconfig`, `husky`, `vscode` settings in my Ty
 
 # Getting Started
 ```bash
-# Packages Install
-yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-react husky lint-staged prettier
-npm set-script prepare "husky install"
-yarn prepare
-or
-npm install --save-dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-react husky lint-staged prettier
-npm set-script prepare "husky install"
-npm run prepare
+# Run it from the root path before the project directory.
+sh execute.sh your-react-project-name
 ```
 
-Copy `.eslintrc`, `.eslintignore`, `prettierrc.js`, `.prettierignore`, `tsconfig.json`, `.vscode`
+After the project is created, set your git remote path.
+
+If you run the `execute.sh` shell script, you do not need to configure the following husky except for `package.json`.
 
 ---
 
