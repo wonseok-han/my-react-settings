@@ -11,7 +11,7 @@ sh execute.sh your-react-project-name
 
 After the project is created, set your git remote path.
 
-If you run the `execute.sh` shell script, you do not need to configure the following husky except for `package.json`.
+If you run the [`execute.sh`](https://github.com/wonseok-han/my-react-settings/blob/main/execute.sh) shell script, you do not need to configure the following husky except for `package.json`.
 
 ---
 
