@@ -1,6 +1,7 @@
-yarn create react-app . --template typescript &&
+yarn create react-app $1 --template typescript &&
+cd $1 &&
 yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-react husky lint-staged prettier &&
-npm set-script prepare "husky install" &&
+npm pkg set scripts.prepare="husky install" &&
 yarn prepare &&
 
 echo "// https://github.com/jsx-eslint/eslint-plugin-react
