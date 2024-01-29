@@ -1,5 +1,3 @@
-// https://prettier.io/docs/en/options.html
-
 module.exports = {
   /**
    * Specify the line length that the printer will wrap on.
@@ -44,7 +42,7 @@ module.exports = {
   /**
    * Maintain existing line endings (mixed values within one file are normalised by looking at what’s used after the first line)
    */
-  endOfLine: 'auto',
+  endOfLine: 'lf',
   /**
    * Specify the global whitespace sensitivity for HTML, Vue, Angular, and Handlebars.
    */

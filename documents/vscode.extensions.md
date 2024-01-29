@@ -1,0 +1,9 @@
+# VsCode Recommendations Extensions
+
+* dbaeumer.vscode-eslint,
+
+* esbenp.prettier-vscode,
+
+* editorconfig.editorconfig,
+
+* exodiusstudios.comment-anchors,
