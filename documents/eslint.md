@@ -10,18 +10,14 @@
 * `plugin:import/recommended`: 모듈 import와 export에 대한 권장 ESLint 규칙이 적용되어 있습니다.
 
 ```json
-...
 "extends": [
-  ...
   "eslint:recommended",
   "plugin:react/recommended",
   "plugin:@typescript-eslint/recommended",
   "plugin:@typescript-eslint/recommended-requiring-type-checking",
   "plugin:prettier/recommended",
   "plugin:import/recommended",
-  ...
 ],
-...
 ```
 
 ## ETC Rules
@@ -55,7 +51,6 @@
 * `@typescript-eslint/type-annotation-spacing`: 타입 주석과 값 사이에 적절한 공백을 넣도록 강제합니다.
 
 ```json
-...
 "rules": {
   "import/no-named-as-default": "off",
   "import/order": [
@@ -246,7 +241,6 @@
     }
   ]
 },
-...
 ```
 
 ## Reference

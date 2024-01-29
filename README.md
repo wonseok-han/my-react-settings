@@ -16,19 +16,25 @@ If you run the [`execute.sh`](https://github.com/wonseok-han/my-react-settings/b
 ---
 
 # 1. prettier
-- [.prettierrc.js](https://github.com/wonseok-han/my-react-settings/blob/main/.prettierrc.js)
+
+- [.prettierrc 설정 내용 보기](https://github.com/wonseok-han/my-react-settings/blob/main/documents/prettier.md)
 
 # 2. tsconfig
+
 - [tsconfig.json](https://github.com/wonseok-han/my-react-settings/blob/main/tsconfig.json)
 
 # 3. `JavaScript eslint` rules
+
 - [.eslintrc](https://github.com/wonseok-han/my-react-settings/blob/main/.eslintrc.javascript)
 
 # 4. `TypeScript eslint` rules
-- [.eslintrc](https://github.com/wonseok-han/my-react-settings/blob/main/.eslintrc)
+
+- [.eslintrc 설정 내용 보기](https://github.com/wonseok-han/my-react-settings/blob/main/documents/eslint.md)
 
 # 5. husky
+
 - [husky](https://github.com/wonseok-han/my-react-settings/blob/main/.husky/pre-commit)
+
 ```bash
 # husky pre-commint init setting
 npx husky add .husky/pre-commit "yarn lint-staged"
@@ -49,11 +55,13 @@ npx husky add .husky/pre-commit "yarn lint-staged"
 ```
 
 # 6. VSCode Settings
-- [VSCode Settings](https://github.com/wonseok-han/my-react-settings/blob/main/.vscode/settings.json)
+
+- [VSCode Settings 설정](https://github.com/wonseok-han/my-react-settings/blob/main/documents/vscode.settings.md)
 
 ---
 
 # Reference
+
 - [prettier](https://prettier.io/docs/en/options.html)
 - [tsconfig](https://www.typescriptlang.org/tsconfig)
 - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
