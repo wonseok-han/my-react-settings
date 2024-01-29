@@ -1,13 +1,16 @@
 {
   "name": "react-settings",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "engines": {
+    "yarn": ">=1.20.0 <=1.22.21",
+    "node": ">=20.0.0 <=20.11.0"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.1",
-    "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "react": "^18.1.0",
@@ -22,12 +25,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src --fix",
+    "tsc": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint-fix": "eslint ./src --fix",
     "prettier": "npx prettier -w ./src/**/*.\"(js|jsx|ts|tsx)\""
   },
   "lint-staged": {
     "./src/**/*.{js,jsx,ts,tsx}": [
-      "eslint ./src --fix",
+      "eslint ./src --ext ts,tsx --cache",
       "prettier -w ./src/**/*.(js|jsx|ts|tsx)"
     ]
   },
@@ -50,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin-js": "^1.5.4",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.17.0",
